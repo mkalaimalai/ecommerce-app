@@ -1,0 +1,31 @@
+spring.data.mongodb.uri: mongodb://192.168.1.60:27017/product
+
+#  mongodb+srv://Cluster70289:c1RsZ0x0XlVa@cluster70289.pl9p3ua.mongodb.net/products?retryWrites=true&w=majority
+
+
+
+
+spring:
+  application.name: product-service
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+
+spring.datasource:
+      driverClassName: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/customer?useSSL=false
+      password: root1234
+      username: root
+
+spring.jackson:
+        property-naming-strategy: SNAKE_CASE
+
+spring. jpa:
+  show-sql: true
+  hibernate.ddl-auto: create-drop
+
+spring.main:
+    allow-bean-definition-overriding: true
+
+spring.server.port: 8085

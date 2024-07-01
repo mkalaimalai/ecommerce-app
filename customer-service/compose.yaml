@@ -1,0 +1,16 @@
+services:
+  users:
+    image: "mkalaimalai/customer-services:v1"
+    container_name: customerservice-ms
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    network_mode: "host"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+networks:
+  mkalaimalai:
+    driver: "bridge"
