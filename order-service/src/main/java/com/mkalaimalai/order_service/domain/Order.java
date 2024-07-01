@@ -1,25 +1,18 @@
 package com.mkalaimalai.order_service.domain;
 
 
-import java.time.LocalDateTime;
-import java.util.UUID;
-
-import com.mkalaimalai.order_service.constant.AppConstant;
-import jakarta.persistence.*;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
+import com.mkalaimalai.order_service.constant.AppConstant;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "orders")

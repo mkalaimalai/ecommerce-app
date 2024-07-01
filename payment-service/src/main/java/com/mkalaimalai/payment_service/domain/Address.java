@@ -1,11 +1,9 @@
 package com.mkalaimalai.payment_service.domain;
 
 
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import jakarta.persistence.*;
 
 
 @Setter

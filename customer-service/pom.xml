@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mkalaimalai</groupId>
-    <artifactId>payment-service</artifactId>
+    <artifactId>customer-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>payment-service</name>
+    <name>customer-service</name>
     <description>Customer Microservice</description>
     <properties>
         <java.version>17</java.version>

@@ -3,7 +3,6 @@ package com.mkalaimalai.product_service.controller;
 
 import com.mkalaimalai.product_service.dto.ProductDTO;
 import com.mkalaimalai.product_service.service.ProductService;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

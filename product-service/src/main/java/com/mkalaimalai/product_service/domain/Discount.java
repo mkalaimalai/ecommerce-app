@@ -1,9 +1,7 @@
 package com.mkalaimalai.product_service.domain;
 
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;

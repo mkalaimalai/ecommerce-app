@@ -1,6 +1,5 @@
 package com.mkalaimalai.payment_service.service;
 
-import com.mkalaimalai.payment_service.domain.Address;
 import com.mkalaimalai.payment_service.domain.Payment;
 import com.mkalaimalai.payment_service.dto.CustomerDTO;
 import com.mkalaimalai.payment_service.exception.ResourceNotFoundException;
@@ -22,11 +21,7 @@ public class CustomerService {
 
     public CustomerDTO createCustomer(CustomerDTO customer){
         Payment paymentEntity = CustomerMapper.INSTANCE.toEntity(customer);
-        if(paymentEntity.getAddresses() !=null) {
-            for (Address address : paymentEntity.getAddresses()) {
-                address.setPayment(paymentEntity);
-            }
-        }
+
 
         Payment savedPayment = customerRepository.save(paymentEntity);
         return CustomerMapper.INSTANCE.toDTO(savedPayment);

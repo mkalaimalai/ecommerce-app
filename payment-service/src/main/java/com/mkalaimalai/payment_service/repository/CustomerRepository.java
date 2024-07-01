@@ -2,7 +2,6 @@ package com.mkalaimalai.payment_service.repository;
 
 
 import com.mkalaimalai.payment_service.domain.Payment;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;

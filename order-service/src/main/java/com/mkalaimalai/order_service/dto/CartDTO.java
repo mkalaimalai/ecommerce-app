@@ -1,21 +1,21 @@
 package com.mkalaimalai.order_service.dto;
 
+import com.mkalaimalai.order_service.domain.Order;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
 
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AddressDTO {
+public class CartDTO {
 
-    private String line1;
-    private String line2;
-    private String city;
-    private String country;
-    private String zip;
-    private com.mkalaimalai.domain.AddressType type;
+    private Long cartId;
+    private Integer userId;
+    private Set<Order> orders;
 }

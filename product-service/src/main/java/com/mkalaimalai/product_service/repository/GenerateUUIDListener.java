@@ -1,9 +1,6 @@
 package com.mkalaimalai.product_service.repository;
 
-import com.mkalaimalai.product_service.domain.Discount;
 import com.mkalaimalai.product_service.domain.Product;
-import com.mkalaimalai.product_service.domain.ProductCategory;
-import com.mkalaimalai.product_service.domain.ProductInventory;
 import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
 import org.springframework.data.mongodb.core.mapping.event.BeforeConvertEvent;
 import org.springframework.stereotype.Component;

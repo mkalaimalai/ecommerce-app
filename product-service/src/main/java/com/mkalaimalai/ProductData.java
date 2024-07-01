@@ -4,19 +4,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import com.mkalaimalai.product_service.domain.ProductCategory;
-import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.DefaultAsyncHttpClient;
-
-import org.springframework.http.HttpHeaders;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.http.ResponseEntity;
-
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
 public class ProductData {
 
 //    public static void main(String[] args) throws Exception{
