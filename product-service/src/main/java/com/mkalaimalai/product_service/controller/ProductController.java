@@ -12,7 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/customers")
+@RequestMapping(value = "/products")
 @Slf4j
 public class ProductController {
 
@@ -22,9 +22,9 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public ProductDTO createProduct(@RequestBody ProductDTO product){
-        log.debug("Creating product with name = {}", product.getName());
+        log.debug("Creating product with name = {}", product.getTitle());
         ProductDTO savedProduct = productService.createProduct(product);
-        log.debug("Created product with email = {}", savedProduct.getName());
+        log.debug("Created product with email = {}", savedProduct.getTitle());
         return savedProduct;
     }
 

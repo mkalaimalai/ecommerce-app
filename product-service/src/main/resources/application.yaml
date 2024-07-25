@@ -1,9 +1,32 @@
+server:
+  port: 8085
+
+
+spring.boot:
+    admin:
+      url: http://localhost:9095
+      client:
+        name: product-service
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info  # Expose only health and info endpoints
+
+
 spring.data.mongodb.uri: mongodb://192.168.1.60:27017/product
 
 #  mongodb+srv://Cluster70289:c1RsZ0x0XlVa@cluster70289.pl9p3ua.mongodb.net/products?retryWrites=true&w=majority
-
-
-
+spring.kafka:
+    topic: "product-events"
+    producer:
+      bootstrap-servers: 192.168.1.60:19092,192.168.1.60:29092,192.168.1.60:39092
+      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    admin:
+      properties:
+        bootstrap-servers: 192.168.1.60:19092,192.168.1.60:29092,192.168.1.60:39092
 
 spring:
   application.name: product-service
@@ -28,4 +51,4 @@ spring. jpa:
 spring.main:
     allow-bean-definition-overriding: true
 
-spring.server.port: 8085
+

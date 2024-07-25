@@ -1,3 +1,19 @@
+spring.boot:
+  admin:
+    url: http://localhost:9095
+    client:
+      name: customer-service
+
+spring.redis:
+  host: 192.168.1.60
+  port: 6379
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info  # Expose only health and info endpoints
+
 spring:
   application.name: customer-service
 
@@ -7,19 +23,22 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
 spring.datasource:
-      driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/customer?useSSL=false
-      password: root1234
-      username: root
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://192.168.1.60:3307/customer?allowPublicKeyRetrieval=true&useSSL=false
+  password: root1234
+  username: root
 
 spring.jackson:
-        property-naming-strategy: SNAKE_CASE
+  property-naming-strategy: SNAKE_CASE
 
 spring. jpa:
   show-sql: true
   hibernate.ddl-auto: create-drop
 
-spring.main:
-    allow-bean-definition-overriding: true
 
-spring.server.port: 8085
+
+
+spring.main:
+  allow-bean-definition-overriding: true
+
+

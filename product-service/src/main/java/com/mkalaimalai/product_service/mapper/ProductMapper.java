@@ -1,10 +1,10 @@
 package com.mkalaimalai.product_service.mapper;
 
-import com.mkalaimalai.product_service.domain.Discount;
+import com.mkalaimalai.product_service.domain.Dimension;
 import com.mkalaimalai.product_service.domain.Product;
 import com.mkalaimalai.product_service.domain.ProductCategory;
 import com.mkalaimalai.product_service.domain.ProductInventory;
-import com.mkalaimalai.product_service.dto.DiscountDTO;
+import com.mkalaimalai.product_service.dto.DimensionDTO;
 import com.mkalaimalai.product_service.dto.ProductCategoryDTO;
 import com.mkalaimalai.product_service.dto.ProductDTO;
 import com.mkalaimalai.product_service.dto.ProductInventoryDTO;
@@ -29,11 +29,11 @@ public interface ProductMapper {
     @Mapping(source="id", target="id")
     public ProductCategory toProductCategoryEntity(ProductCategoryDTO dto) ;
 
-    @Mapping(source="id", target="id")
-    public DiscountDTO toDiscountDTO(Discount entity) ;
+    @Mapping(source="width", target="width")
+    public DimensionDTO toDimensionDTO(Dimension entity) ;
 
-    @Mapping(source="id", target="id")
-    public Discount toDiscountEntity(DiscountDTO dto) ;
+    @Mapping(source="width", target="width")
+    public Dimension toDimensionEntity(DimensionDTO dto) ;
 
     @Mapping(source="id", target="id")
     public ProductInventory toProductInventoryEntity(ProductInventoryDTO dto) ;

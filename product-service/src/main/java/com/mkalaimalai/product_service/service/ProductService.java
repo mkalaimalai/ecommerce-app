@@ -28,6 +28,8 @@ public class ProductService {
 
     public Page<ProductDTO> getAllProducts(Pageable pageable){
 
+
+
         Page<Product> products = productRepository.findAll(pageable);
 
         if(products.getContent().isEmpty()){
