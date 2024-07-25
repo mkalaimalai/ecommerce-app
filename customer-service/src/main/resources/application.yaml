@@ -1,7 +1,7 @@
 spring.boot:
   admin:
-    url: http://localhost:9095
     client:
+      url: http://192.168.1.60:9095
       name: customer-service
 
 spring.redis:
@@ -11,8 +11,9 @@ spring.redis:
 management:
   endpoints:
     web:
+      base-path: /customer/actuator
       exposure:
-        include: health,info  # Expose only health and info endpoints
+        include: prometheus, metrics, info, health, shutdown, beans,env, beans, caches, configprops, loggers, httptrace, mappings, shutdown, threaddump, conditions
 
 spring:
   application.name: customer-service

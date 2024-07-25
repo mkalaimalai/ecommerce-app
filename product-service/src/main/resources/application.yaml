@@ -3,16 +3,19 @@ server:
 
 
 spring.boot:
-    admin:
-      url: http://localhost:9095
-      client:
-        name: product-service
+  admin:
+    client:
+      url: http://192.168.1.60:9095
+      name: product-service
+
 
 management:
+  info:
+    env.enabled: true
   endpoints:
     web:
       exposure:
-        include: health,info  # Expose only health and info endpoints
+        include: prometheus, metrics, info, health, shutdown, beans,env, beans, caches, configprops, loggers, httptrace, mappings, shutdown, threaddump, conditions
 
 
 spring.data.mongodb.uri: mongodb://192.168.1.60:27017/product
