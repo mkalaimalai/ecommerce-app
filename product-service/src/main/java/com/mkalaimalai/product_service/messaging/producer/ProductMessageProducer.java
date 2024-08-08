@@ -21,7 +21,7 @@ import java.util.concurrent.TimeoutException;
 
 @Component
 @Slf4j
-public class OrderMessageProducer {
+public class ProductMessageProducer {
 
     @Value("${spring.kafka.topic}")
     public String topic;
@@ -29,12 +29,12 @@ public class OrderMessageProducer {
     private final KafkaTemplate<String, String> kafkaTemplate;
     private final ObjectMapper objectMapper;
 
-    public OrderMessageProducer(KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
+    public ProductMessageProducer(KafkaTemplate<String, String> kafkaTemplate, ObjectMapper objectMapper) {
         this.kafkaTemplate = kafkaTemplate;
         this.objectMapper = objectMapper;
     }
 
-    public CompletableFuture<SendResult<String, String>> sendLibraryEvent(ProductCreateEvent productCreateEvent) throws JsonProcessingException {
+    public CompletableFuture<SendResult<String, String>> sendProductEvent(ProductCreateEvent productCreateEvent) throws JsonProcessingException {
         var key = productCreateEvent.getProductId().toString();
         var value = objectMapper.writeValueAsString(productCreateEvent);
 
@@ -53,7 +53,7 @@ public class OrderMessageProducer {
 
     }
 
-    public CompletableFuture<SendResult<String, String>> sendLibraryEvent_approach3(ProductCreateEvent productCreateEvent) throws JsonProcessingException {
+    public CompletableFuture<SendResult<String, String>> sendProductEvent_approach3(ProductCreateEvent productCreateEvent) throws JsonProcessingException {
         var key = productCreateEvent.getProductId().toString();
         var value = objectMapper.writeValueAsString(productCreateEvent);
 
@@ -80,7 +80,7 @@ public class OrderMessageProducer {
         return new ProducerRecord<>(topic, null, key, value, recordHeaders);
     }
 
-    public SendResult<String, String> sendLibraryEvent_approach2(ProductCreateEvent productCreateEvent)
+    public SendResult<String, String> sendProductEvent_approach2(ProductCreateEvent productCreateEvent)
             throws JsonProcessingException, ExecutionException, InterruptedException, TimeoutException {
         var key = productCreateEvent.getProductId().toString();
         var value = objectMapper.writeValueAsString(productCreateEvent);

@@ -1,5 +1,7 @@
 package com.mkalaimalai.customer_service.domain;
 
+import com.mkalaimalai.common.domain.entity.AggregateRoot;
+import com.mkalaimalai.common.valueobject.CustomerID;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Cascade;
@@ -13,7 +15,7 @@ import java.util.UUID;
 @Getter
 @Entity
 @Table(name = "Customer")
-public class Customer {
+public class Customer extends AggregateRoot<CustomerID> {
 
     private static final long serialVersionUID = 1L;
 

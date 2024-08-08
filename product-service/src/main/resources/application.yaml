@@ -2,6 +2,11 @@ server:
   port: 8085
 
 
+spring.data:
+  elasticsearch:
+    cluster-nodes: 192.168.1.6:9200
+
+
 spring.boot:
   admin:
     client:
@@ -21,15 +26,33 @@ management:
 spring.data.mongodb.uri: mongodb://192.168.1.60:27017/product
 
 #  mongodb+srv://Cluster70289:c1RsZ0x0XlVa@cluster70289.pl9p3ua.mongodb.net/products?retryWrites=true&w=majority
+#spring.kafka:
+#    topic: "product-events"
+#    producer:
+#      bootstrap-servers: 192.168.1.60:19092,192.168.1.60:29092,192.168.1.60:39092
+#      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#    admin:
+#      properties:
+#        bootstrap-servers: 192.168.1.60:19092,192.168.1.60:29092,192.168.1.60:39092
+
+
 spring.kafka:
     topic: "product-events"
-    producer:
-      bootstrap-servers: 192.168.1.60:19092,192.168.1.60:29092,192.168.1.60:39092
-      key-serializer: org.apache.kafka.common.serialization.IntegerSerializer
-      value-serializer: org.apache.kafka.common.serialization.StringSerializer
-    admin:
+    consumer:
+      auto-offset-reset: earliest
+      bootstrap-servers: 192.168.1.60:19092
+      group-id: product-events-listeners-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        bootstrap-servers: 192.168.1.60:19092,192.168.1.60:29092,192.168.1.60:39092
+        spring.json.trusted.packages: com.mkalaimalai.product_service.domain.event # change this with your event packages
+    producer:
+      acks: -1
+      bootstrap-servers: 192.168.1.60:19092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 
 spring:
   application.name: product-service
