@@ -1,10 +1,11 @@
-package com.mkalaimalai.order_service.valueobject;
+package com.mkalaimalai.shipping_service.valueobject;
 
-import com.mkalaimalai.common.valueobject.BaseId;
+import com.mkalaimalai.common.valueobject.BaseID;
+
 
 import java.util.UUID;
 
-public class CustomerId extends BaseId<UUID> {
+public class CustomerId extends BaseID<UUID> {
 
     public CustomerId(UUID value){
         super(value);
