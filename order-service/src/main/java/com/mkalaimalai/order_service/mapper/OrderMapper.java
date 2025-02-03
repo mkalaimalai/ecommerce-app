@@ -16,18 +16,17 @@ public interface OrderMapper {
 
     OrderMapper INSTANCE = Mappers.getMapper(OrderMapper.class);
 
-    @Mapping(source="orderId", target="orderId")
-    public OrderDTO toDTO(Order entity) ;
+    @Mapping(source = "orderId", target = "orderId")
+    public OrderDTO toDTO(Order entity);
 
-    @Mapping(source="orderId", target="orderId")
-    public Order toEntity(OrderDTO dto) ;
+    @Mapping(source = "orderId", target = "orderId")
+    public Order toEntity(OrderDTO dto);
 
-    @Mapping(source="cartId", target="cartId")
-    public CartDTO toDTO(Cart entity) ;
+    @Mapping(source = "cartId", target = "cartId")
+    public CartDTO toDTO(Cart entity);
 
-    @Mapping(source="cartId", target="cartId")
-    public Cart toEntity(CartDTO dto) ;
-
+    @Mapping(source = "cartId", target = "cartId")
+    public Cart toEntity(CartDTO dto);
 
 
 }

@@ -1,4 +1,4 @@
 package com.mkalaimalai.common.domain.event;
 
-public interface DomainEvent<T>{
+public interface DomainEvent<T> {
 }

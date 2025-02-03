@@ -24,5 +24,5 @@ public class OrderDTO {
     private Double orderFee;
 
     private Cart cart;
-    
+
 }

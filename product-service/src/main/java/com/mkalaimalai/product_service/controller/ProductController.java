@@ -46,12 +46,11 @@ public class ProductController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public Page<ProductDTO> getAllProducts(
-            @RequestParam( value= "page", required=true, defaultValue = "0") Integer page,
-            @RequestParam(value= "size", required=true, defaultValue = "10") Integer size){
+            @RequestParam(value = "page", required = true, defaultValue = "0") Integer page,
+            @RequestParam(value = "size", required = true, defaultValue = "10") Integer size) {
         log.debug("Getting all the products data");
         return productService.getAllProducts(PageRequest.of(page, size));
     }
-
 
 
 }

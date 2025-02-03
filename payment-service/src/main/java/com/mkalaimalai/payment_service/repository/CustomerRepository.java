@@ -11,7 +11,8 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface CustomerRepository   extends  PagingAndSortingRepository<Payment, UUID>, CrudRepository<Payment, UUID> {
+public interface CustomerRepository extends PagingAndSortingRepository<Payment, UUID>, CrudRepository<Payment, UUID> {
     public Payment findByUserName(String userName);
+
     public Page<Payment> findAll(Pageable pageable);
 }

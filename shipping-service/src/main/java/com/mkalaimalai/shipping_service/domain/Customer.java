@@ -44,7 +44,7 @@ public class Customer {
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     private List<Address> addresses = new ArrayList<Address>();
 
-    public void addAddress(Address address){
+    public void addAddress(Address address) {
         address.setCustomer(this);
     }
 
@@ -66,7 +66,6 @@ public class Customer {
                 ", middleName='" + middleName + '\'' +
                 '}';
     }
-
 
 
 }

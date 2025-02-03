@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableAdminServer
 public class EcommerceAdminApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(EcommerceAdminApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(EcommerceAdminApplication.class, args);
+    }
 
 }

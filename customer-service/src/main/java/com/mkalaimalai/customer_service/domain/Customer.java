@@ -2,11 +2,11 @@ package com.mkalaimalai.customer_service.domain;
 
 import com.mkalaimalai.common.domain.entity.AggregateRoot;
 import com.mkalaimalai.common.valueobject.CustomerID;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Cascade;
 
-import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -20,9 +20,16 @@ public class Customer extends AggregateRoot<CustomerID> {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column(name = "USER_ID")
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @Column(name = "CUSTOMER_ID", nullable = false, unique = true)
+//    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID customerId;
+
+    @PrePersist
+    public void generateUUID() {
+        if (customerId == null) {
+            customerId = UUID.randomUUID();
+        }
+    }
 
     @Column(name = "USER_NAME")
     private String userName;
@@ -46,7 +53,7 @@ public class Customer extends AggregateRoot<CustomerID> {
     @Cascade(org.hibernate.annotations.CascadeType.DELETE)
     private List<Address> addresses = new ArrayList<Address>();
 
-    public void addAddress(Address address){
+    public void addAddress(Address address) {
         address.setCustomer(this);
     }
 
@@ -68,7 +75,6 @@ public class Customer extends AggregateRoot<CustomerID> {
                 ", middleName='" + middleName + '\'' +
                 '}';
     }
-
 
 
 }

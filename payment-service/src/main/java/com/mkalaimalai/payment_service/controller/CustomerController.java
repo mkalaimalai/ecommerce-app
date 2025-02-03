@@ -21,7 +21,7 @@ public class CustomerController {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public CustomerDTO createCustomer(@RequestBody CustomerDTO customer){
+    public CustomerDTO createCustomer(@RequestBody CustomerDTO customer) {
         log.debug("Creating customer with email = {}", customer.getEmail());
         CustomerDTO savedCustomer = customerService.createCustomer(customer);
         log.debug("Created customer with email = {}", savedCustomer.getEmail());
@@ -31,12 +31,11 @@ public class CustomerController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public Page<CustomerDTO> getAllCustomers(
-            @RequestParam( value= "page", required=true, defaultValue = "0") Integer page,
-            @RequestParam(value= "size", required=true, defaultValue = "10") Integer size){
+            @RequestParam(value = "page", required = true, defaultValue = "0") Integer page,
+            @RequestParam(value = "size", required = true, defaultValue = "10") Integer size) {
         log.debug("Getting all the customers data");
         return customerService.getAllCustomers(PageRequest.of(page, size));
     }
-
 
 
 }

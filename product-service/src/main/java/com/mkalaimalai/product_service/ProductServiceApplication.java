@@ -19,7 +19,7 @@ import java.util.UUID;
 
 @SpringBootApplication
 @EnableElasticsearchRepositories
-public class ProductServiceApplication  implements CommandLineRunner {
+public class ProductServiceApplication implements CommandLineRunner {
 
     @Value("${spring.kafka.topic}")
     public String topic;
@@ -41,8 +41,8 @@ public class ProductServiceApplication  implements CommandLineRunner {
 
 
     public void run(String... args) throws Exception {
-        System.out.println("topic-->"+topic);
-        this.kafkaTemplate.send("product-events", "productId", new ProductCreateEvent(UUID.randomUUID(),  null));
+        System.out.println("topic-->" + topic);
+        this.kafkaTemplate.send("product-events", "productId", new ProductCreateEvent(UUID.randomUUID(), null));
         this.kafkaTemplate.send("product-events", "productId", new ProductCreateEvent(UUID.randomUUID(), null));
     }
 

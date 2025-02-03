@@ -19,7 +19,7 @@ public class CustomerService {
     @Autowired
     private CustomerRepository customerRepository;
 
-    public CustomerDTO createCustomer(CustomerDTO customer){
+    public CustomerDTO createCustomer(CustomerDTO customer) {
         Payment paymentEntity = CustomerMapper.INSTANCE.toEntity(customer);
 
 
@@ -28,11 +28,11 @@ public class CustomerService {
 
     }
 
-    public Page<CustomerDTO> getAllCustomers(Pageable pageable){
+    public Page<CustomerDTO> getAllCustomers(Pageable pageable) {
 
         Page<Payment> customers = customerRepository.findAll(pageable);
 
-        if(customers.getContent().isEmpty()){
+        if (customers.getContent().isEmpty()) {
             throw new ResourceNotFoundException(ResourceNotFoundException.Resource.Customer, "Customers not found");
         }
 
@@ -40,8 +40,7 @@ public class CustomerService {
 
         return new PageImpl<CustomerDTO>(customers.getContent().stream()
                 .map(customer -> CustomerMapper.INSTANCE.toDTO(customer))
-                .collect(Collectors.toList()),  pageable, totalElements );
-
+                .collect(Collectors.toList()), pageable, totalElements);
 
 
     }

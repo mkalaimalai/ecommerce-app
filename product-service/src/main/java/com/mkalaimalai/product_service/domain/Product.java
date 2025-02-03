@@ -30,6 +30,6 @@ public class Product {
     private BigDecimal weight;
     private Dimension dimensions;
 
-    
+
 }
 

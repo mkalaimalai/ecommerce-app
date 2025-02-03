@@ -38,20 +38,20 @@ spring.data.mongodb.uri: mongodb://192.168.1.60:27017/product
 
 
 spring.kafka:
-    topic: "product-events"
-    consumer:
-      auto-offset-reset: earliest
-      bootstrap-servers: 192.168.1.60:19092
-      group-id: product-events-listeners-group
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
-      properties:
-        spring.json.trusted.packages: com.mkalaimalai.product_service.domain.event # change this with your event packages
-    producer:
-      acks: -1
-      bootstrap-servers: 192.168.1.60:19092
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  topic: "product-events"
+  consumer:
+    auto-offset-reset: earliest
+    bootstrap-servers: 192.168.1.60:19092
+    group-id: product-events-listeners-group
+    key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.trusted.packages: com.mkalaimalai.product_service.domain.event # change this with your event packages
+  producer:
+    acks: -1
+    bootstrap-servers: 192.168.1.60:19092
+    key-serializer: org.apache.kafka.common.serialization.StringSerializer
+    value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
 
 spring:
@@ -62,19 +62,19 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
 spring.datasource:
-      driverClassName: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/customer?useSSL=false
-      password: root1234
-      username: root
+  driverClassName: com.mysql.jdbc.Driver
+  url: jdbc:mysql://127.0.0.1:3306/customer?useSSL=false
+  password: root1234
+  username: root
 
 spring.jackson:
-        property-naming-strategy: SNAKE_CASE
+  property-naming-strategy: SNAKE_CASE
 
 spring. jpa:
   show-sql: true
   hibernate.ddl-auto: create-drop
 
 spring.main:
-    allow-bean-definition-overriding: true
+  allow-bean-definition-overriding: true
 
 

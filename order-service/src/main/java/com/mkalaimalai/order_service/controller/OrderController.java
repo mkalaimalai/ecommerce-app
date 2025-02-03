@@ -20,18 +20,17 @@ public class OrderController {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public OrderDTO createCustomer(@RequestBody OrderDTO customer){
-                return null;
+    public OrderDTO createCustomer(@RequestBody OrderDTO customer) {
+        return null;
 
     }
 
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
-    public Page<OrderDTO> getAllCustomers(){
+    public Page<OrderDTO> getAllCustomers() {
         return null;
 
     }
-
 
 
 }

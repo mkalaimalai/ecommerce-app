@@ -19,20 +19,19 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public ProductDTO createProduct(ProductDTO productDTO){
+    public ProductDTO createProduct(ProductDTO productDTO) {
         Product productEntity = ProductMapper.INSTANCE.toProductEntity(productDTO);
         Product savedProduct = productRepository.save(productEntity);
         return ProductMapper.INSTANCE.toProductDTO(savedProduct);
 
     }
 
-    public Page<ProductDTO> getAllProducts(Pageable pageable){
-
+    public Page<ProductDTO> getAllProducts(Pageable pageable) {
 
 
         Page<Product> products = productRepository.findAll(pageable);
 
-        if(products.getContent().isEmpty()){
+        if (products.getContent().isEmpty()) {
             throw new ResourceNotFoundException(ResourceNotFoundException.Resource.Product, "Products not found");
         }
 
@@ -40,8 +39,7 @@ public class ProductService {
 
         return new PageImpl<ProductDTO>(products.getContent().stream()
                 .map(product -> ProductMapper.INSTANCE.toProductDTO(product))
-                .collect(Collectors.toList()),  pageable, totalElements );
-
+                .collect(Collectors.toList()), pageable, totalElements);
 
 
     }

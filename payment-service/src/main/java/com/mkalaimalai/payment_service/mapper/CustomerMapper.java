@@ -16,22 +16,22 @@ public interface CustomerMapper {
 
     CustomerMapper INSTANCE = Mappers.getMapper(CustomerMapper.class);
 
-    @Mapping(source="id", target="id")
-    public CustomerDTO toDTO(Payment entity) ;
+    @Mapping(source = "id", target = "id")
+    public CustomerDTO toDTO(Payment entity);
 
-    @Mapping(source="id", target="id")
-    public Payment toEntity(CustomerDTO dto) ;
+    @Mapping(source = "id", target = "id")
+    public Payment toEntity(CustomerDTO dto);
 
-    @Mapping(source="line1", target="line1")
-    public AddressDTO toDTO(Address entity) ;
+    @Mapping(source = "line1", target = "line1")
+    public AddressDTO toDTO(Address entity);
 
-    @Mapping(source="line1", target="line1")
-    public Address toEntity(AddressDTO dto) ;
+    @Mapping(source = "line1", target = "line1")
+    public Address toEntity(AddressDTO dto);
 
 
-    public List<AddressDTO> createAddressVOList(List<Address> addresses) ;
+    public List<AddressDTO> createAddressVOList(List<Address> addresses);
 
-    public List<Address> createAddressList(List<AddressDTO> addresses) ;
+    public List<Address> createAddressList(List<AddressDTO> addresses);
 
 
 }

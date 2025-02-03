@@ -6,7 +6,7 @@ import java.util.UUID;
 
 public class CustomerId extends BaseID<UUID> {
 
-    public CustomerId(UUID value){
+    public CustomerId(UUID value) {
         super(value);
     }
 }

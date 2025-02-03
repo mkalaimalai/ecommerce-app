@@ -3,7 +3,6 @@ package com.mkalaimalai.product_service.domain;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -29,6 +28,6 @@ public class Product1 {
     private BigDecimal weight;
     private Dimension dimensions;
 
-    
+
 }
 

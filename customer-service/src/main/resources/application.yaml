@@ -1,22 +1,27 @@
 spring.boot:
   admin:
     client:
-      url: http://192.168.1.60:9095
+      instance:
+        service-base-url: http://localhost:9095
       name: customer-service
 
-spring.redis:
-  host: 192.168.1.60
-  port: 6379
+server:
+  port: 8080
+
+#spring.redis:
+#  host: localhost
+#  port: 6379
 
 management:
   endpoints:
     web:
-      base-path: /customer/actuator
+      base-path: /customer-service/actuator
       exposure:
         include: prometheus, metrics, info, health, shutdown, beans,env, beans, caches, configprops, loggers, httptrace, mappings, shutdown, threaddump, conditions
 
 spring:
-  application.name: customer-service
+  application:
+    name: customer-service
 
   jpa:
     properties:
@@ -24,10 +29,16 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
 
 spring.datasource:
-  driverClassName: com.mysql.jdbc.Driver
-  url: jdbc:mysql://192.168.1.60:3307/customer?allowPublicKeyRetrieval=true&useSSL=false
-  password: root1234
-  username: root
+  driverClassName: org.h2.Driver
+  url: jdbc:h2:mem:userboot;MODE=MySQL;DB_CLOSE_ON_EXIT=FALSE
+
+
+
+#spring.datasource:
+#  driverClassName: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://192.168.1.60:3307/customer?allowPublicKeyRetrieval=true&useSSL=false
+#  password: root1234
+#  username: root
 
 spring.jackson:
   property-naming-strategy: SNAKE_CASE
@@ -36,7 +47,9 @@ spring. jpa:
   show-sql: true
   hibernate.ddl-auto: create-drop
 
-
+spring.cache:
+  ehcache:
+    config: classpath:ehcache.xml
 
 
 spring.main:

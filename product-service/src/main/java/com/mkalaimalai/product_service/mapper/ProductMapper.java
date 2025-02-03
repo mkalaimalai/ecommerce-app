@@ -17,31 +17,29 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    @Mapping(source="id", target="id")
-    public ProductDTO toProductDTO(Product entity) ;
+    @Mapping(source = "id", target = "id")
+    public ProductDTO toProductDTO(Product entity);
 
-    @Mapping(source="id", target="id")
-    public Product toProductEntity(ProductDTO dto) ;
+    @Mapping(source = "id", target = "id")
+    public Product toProductEntity(ProductDTO dto);
 
-    @Mapping(source="id", target="id")
-    public ProductCategoryDTO toProductCategoryDTO(ProductCategory entity) ;
+    @Mapping(source = "id", target = "id")
+    public ProductCategoryDTO toProductCategoryDTO(ProductCategory entity);
 
-    @Mapping(source="id", target="id")
-    public ProductCategory toProductCategoryEntity(ProductCategoryDTO dto) ;
+    @Mapping(source = "id", target = "id")
+    public ProductCategory toProductCategoryEntity(ProductCategoryDTO dto);
 
-    @Mapping(source="width", target="width")
-    public DimensionDTO toDimensionDTO(Dimension entity) ;
+    @Mapping(source = "width", target = "width")
+    public DimensionDTO toDimensionDTO(Dimension entity);
 
-    @Mapping(source="width", target="width")
-    public Dimension toDimensionEntity(DimensionDTO dto) ;
+    @Mapping(source = "width", target = "width")
+    public Dimension toDimensionEntity(DimensionDTO dto);
 
-    @Mapping(source="id", target="id")
-    public ProductInventory toProductInventoryEntity(ProductInventoryDTO dto) ;
+    @Mapping(source = "id", target = "id")
+    public ProductInventory toProductInventoryEntity(ProductInventoryDTO dto);
 
-    @Mapping(source="id", target="id")
-    public ProductInventoryDTO toProductInventoryDTO(ProductInventory entity) ;
-
-
+    @Mapping(source = "id", target = "id")
+    public ProductInventoryDTO toProductInventoryDTO(ProductInventory entity);
 
 
 }

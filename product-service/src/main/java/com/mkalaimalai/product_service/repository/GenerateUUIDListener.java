@@ -13,7 +13,7 @@ public class GenerateUUIDListener extends AbstractMongoEventListener<Product> {
     @Override
     public void onBeforeConvert(BeforeConvertEvent<Product> event) {
         Product product = event.getSource();
-        if (product !=null && product.getId() == null) {
+        if (product != null && product.getId() == null) {
             product.setId(UUID.randomUUID());
         }
     }

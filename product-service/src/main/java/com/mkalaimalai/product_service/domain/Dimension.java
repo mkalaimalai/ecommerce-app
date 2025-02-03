@@ -2,10 +2,8 @@ package com.mkalaimalai.product_service.domain;
 
 
 import lombok.Data;
-import org.springframework.data.annotation.Id;
 
 import java.math.BigDecimal;
-import java.util.UUID;
 
 
 @Data

@@ -1,11 +1,10 @@
-#Start with a base image containing Java runtime
-FROM openjdk:17-jdk-slim
+# Use official Java runtime as a base image
+FROM openjdk:23-jdk-slim
+VOLUME /tmp
+ADD  target/*.jar app.jar
+RUN sh -c 'touch /app.jar'
+ENV JAVA_OPTS=""
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
+EXPOSE 8080:8080
 
-#Information around who maintains the image
-MAINTAINER mkalaimalai
 
-# Add the application's jar to the image
-COPY target/payment-service-0.0.1-SNAPSHOT.jar payment-service0.0.1-SNAPSHOT.jar
-
-# execute the application
-ENTRYPOINT ["java", "-jar", "payment-service-0.0.1-SNAPSHOT.jar"]
