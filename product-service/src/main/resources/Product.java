@@ -3,15 +3,17 @@ package com.mkalaimalai.product_service.domain;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
 @Data
+@Document(collection = "Product")
 @Builder
-//@Document(indexName = "product")
-public class Product1 {
+@org.springframework.data.elasticsearch.annotations.Document(indexName = "product-index")
+public class Product {
 
     @Id
     private UUID id;

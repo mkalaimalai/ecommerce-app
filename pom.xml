@@ -13,7 +13,7 @@
         <module>common</module>
         <module>customer-service</module>
         <module>ecommerce-admin</module>
-        <!--		        <module>product-service</module>-->
+       <module>product-service</module>
         <!--		<module>order-service</module>-->
         <!--		<module>shipping-service</module>-->
         <!--		<module>payment-service</module>-->
