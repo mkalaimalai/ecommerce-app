@@ -6,7 +6,7 @@ spring.boot:
       name: customer-service
 
 server:
-  port: 8089
+  port: 8080
 
 #spring.redis:
 #  host: localhost
