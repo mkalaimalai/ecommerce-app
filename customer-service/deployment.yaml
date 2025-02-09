@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: customer-service
-          image: customer-service:latest
+          image: customer-service:v1
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
